@@ -1,0 +1,45 @@
+//Test Payload 1
+{
+    "proposedEvent":{
+        "start": "2025-11-01T10:30:00",
+        "end": "2025-11-01T11:30:00",
+        "participants": ["user1"]
+    },
+    "existingEvents": [
+      {
+        "start": "2025-11-01T10:00:00",
+        "end": "2025-11-01T11:00:00",
+        "participants": ["user1"]
+      }
+    ]
+}
+
+//Test Payload 2
+{
+    "proposedEvent": {
+        "start": "2025-11-01T10:30:00",
+        "end": "2025-11-01T11:30:00",
+        "participants": ["user1","user2"]
+        
+    },
+    "existingEvents": [
+      {
+        "start": "2025-11-01T10:00:00",
+        "end": "2025-11-01T11:00:00",
+        "participants": ["user1"]
+      },
+      {
+        "start": "2025-11-01T11:15:00",
+        "end": "2025-11-01T11:45:00",
+        "participants": ["user1","user2"]
+      },
+      {
+        "start": "2025-11-01T14:00:00",
+        "end": "2025-11-01T15:00:00",
+        "participants": ["user2"]
+      }
+    ]
+}
+
+http://localhost:3000/api/check-conflicts
+http://localhost:3000/api/suggest-times

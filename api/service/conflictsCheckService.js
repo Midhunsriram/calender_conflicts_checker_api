@@ -1,9 +1,17 @@
 const {parseISO, addMinutes} = require('date-fns');
 
-function conflictsCheckService(req){
-    const proposedEvent = req.body.proposedEvent;
-    const existingEvents = req.body.existingEvents;
-    const bufferTime = req.body.bufferTime? req.body.bufferTime : 15;
+/**
+ * 
+ * @param {*} proposedEvent 
+ * @param {*} existingEvents 
+ * @param {*} bufferTime 
+ * Function compares the proposed event with existing event to check for conflicts between the given timeframe.
+ * @returns 
+ * Returns a boolean.
+ * If there is a conflict between proposed and existing events, returns true.
+ * For no conflicts it returns false.
+ */
+function conflictsCheckService(proposedEvent, existingEvents, bufferTime){
     let conflict;
 
     for (const i of existingEvents){

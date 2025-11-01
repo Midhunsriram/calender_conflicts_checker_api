@@ -40,3 +40,6 @@
       }
     ]
 }
+
+http://localhost:3000/api/check-conflicts
+http://localhost:3000/api/suggest-times
